@@ -89,10 +89,6 @@ Route::prefix('user')->group(function(){
 // ===================================================================
 
 Route::prefix('user/{userIndex}/post')->group(function(){
-    route::get('/',function() {
-        global $users;
-        return $users;
-    });
 
     route::get('/{postIndex}',function($postIndex){
         global $users;
@@ -108,7 +104,7 @@ Route::prefix('user/{userIndex}/post')->group(function(){
                 return "Can not find the post with id ".$postIndex. " for user ".$i;
             };
         }
-    })->where('userIndex',"[0-9]+");
+    })->where('userIndex',"[0-9]+"); 
 });
 
 
